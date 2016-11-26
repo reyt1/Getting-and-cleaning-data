@@ -53,10 +53,10 @@ colnames(finalData) <- c("subject", "activity", features[featureIndex])
 # 3. Uses descriptive activity names to name the activities in the data set
 ############################
 
-## step 1: load activity data into R
+## step 1: load activity  data (call: activityName) into R
 activityName <- read.table("./data/UCI HAR Dataset/activity_labels.txt")
 
-## step 2: replace 1 to 6 with activity names
+## step 2: replace 1 through 6 with activity names coming from activityName
 finalData$activity <- factor(finalData$activity, levels = activityName[,1], labels = activityName[,2])
 
 ###############################
